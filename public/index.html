@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://unpkg.com/chota@latest" />
+	<title>Dictionary | Know Everything</title>
+	<meta name="viewport" content="width=device-width" />
+	<link rel="shortcut icon" id="icon" />
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+	</script>
+	<script src="Dictionary.js">
+
+	</script>
+	<div class="card">
+		<div id="Header">
+
+			<h1>
+				<b>Dictionary | Know Everything</b>
+      </h1>
+    </div>
+        </div>
+    <style>
+      h1 {
+        color: rgb(0,85,170);
+        text-align: center;
+        font-size: 50px;
+        font-family: "Raleway";
+      }
+       h3 {
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        font-family: "Raleway";
+      }
+       h2 {
+        color: rgb(0,85,170);
+        text-align: center;
+        font-size: 30px;
+        font-family: "Raleway";
+      }
+    body {
+        animation-name: title;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes title {
+        from {
+          background-color: rgb(0,85,170);
+        }
+        to {
+          background-color: #0083ff;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      .zoom {
+        padding: 50px;
+        background-color: rgb(231, 231, 231);
+        transition: transform 0.2s;
+        margin: 0 auto;
+        top: 50%;
+        left: 50%;
+        right: -50%;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <div align="center">
+    <h3> Find a Word!</h3>
+      <input id="Input" autocomplete="off" placeholder="Enter a word..." />
+      <br>
+    <button id="Find"> Find!</button>
+    </div>
+    <br>
+     <div class="zoom">
+       <h2><b> Results:</b> </h2>
+       
+       <h2 id="definition"></h2>
+     </div>
+    <script> 
+    $("#icon").attr(
+  "href",
+  "data:image/vnd.microsoft.icon;base64,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"
+);
+    </script>
+
+  </body>
+</html>
